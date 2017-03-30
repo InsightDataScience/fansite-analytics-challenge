@@ -252,7 +252,7 @@ No, for simplicity you may assume that all of the files in the input directory a
 Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `hosts.txt`, `hours.txt`, `resources.txt`, `blocked.txt` files in the `log_output` directory.
 
 ### What should be in the log_input directory?
-You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing.
+You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing. The file size limit on Github is 100 MB so you won't be able to include the provided input file in your log_input directory.
 
 ### How will the coding challenge be evaluated?
 Generally, we will evaluate your coding challenge with a testing suite that provides a variety of inputs and checks the corresponding output. This suite will attempt to use your `run.sh` and is fairly tolerant to different runtime environments. Of course, there are many aspects (e.g. clean code, documentation) that cannot be tested by our suite, so each submission will also be reviewed manually by a data engineer.
