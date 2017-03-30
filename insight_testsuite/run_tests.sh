@@ -116,6 +116,7 @@ function run_all_tests {
     cd ../
 
     compare_outputs
+    echo "${PASS_CNT} of ${NUM_TESTS} tests passed"
   done
 
   echo "[$(date)] ${PASS_CNT} of ${NUM_TESTS} tests passed" >> ${GRADER_ROOT}/results.txt
