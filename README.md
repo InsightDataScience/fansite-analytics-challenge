@@ -13,7 +13,7 @@ Picture yourself as a backend engineer for a NASA fan website that generates a l
 The desired features are described below: 
 
 ### Feature 1: 
-List the top 10 most active IP addresses that have accessed the site.
+List the top 10 most active host/IP addresses that have accessed the site.
 
 ### Feature 2: 
 Identify the 10 resources that consume the most bandwidth on the site
@@ -22,7 +22,7 @@ Identify the 10 resources that consume the most bandwidth on the site
 List the top 10 busiest (or most frequently visited) 60-minute periods 
 
 ### Feature 4: 
-Detect patterns of three failed login attempts from the same user over 20 seconds so that all further attempts to the site can be blocked for 5 minutes. Log those possible security breaches.
+Detect patterns of three failed login attempts from the same IP address over 20 seconds so that all further attempts to the site can be blocked for 5 minutes. Log those possible security breaches.
 
 
 ### Other considerations and optional features
@@ -37,9 +37,9 @@ We're looking for clean, well-thought-out code that correctly implements the des
 We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the three required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
 ### Feature 1 
-List in descending order the top 10 most active IP addresses that have accessed the site.
+List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
 
-Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the IP address followed by a comma and then the number of times it accessed the site. 
+Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the host (or IP address) followed by a comma and then the number of times it accessed the site. 
 
 e.g., `hosts.txt`:
 
