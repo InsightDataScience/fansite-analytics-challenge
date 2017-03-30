@@ -1,4 +1,4 @@
-#Table of Contents
+# Table of Contents
 Challenge Summary
 Details of Implementation
 Description of Data
