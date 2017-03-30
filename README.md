@@ -137,7 +137,7 @@ As a data engineer, it’s important that you write clean, well-documented code 
 
 For example, your solution should be able to account for a large number of events coming in over a short period of time, and need to keep up with the input (i.e. need to process a minute worth of events in less than a minute).
 
-It's also important to use software engineering best practices like unit tests, especially since public data is not clean and predictable. For more details about the implementation, please refer to the FAQ below. If further clarification is necessary, email us at mailto:cc@insightdataengineering.com
+It's also important to use software engineering best practices like unit tests, especially since public data is not clean and predictable. For more details about the implementation, please refer to the FAQ below. If further clarification is necessary, email us at <mailto:cc@insightdataengineering.com>
 
 You may write your solution in any mainstream programming language such as C, C++, C#, Clojure, Erlang, Go, Haskell, Java, Python, Ruby, or Scala. Once completed, submit a link to a Github repo with your source code.
 
