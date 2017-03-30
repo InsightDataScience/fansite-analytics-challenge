@@ -6,37 +6,37 @@ Writing clean, scalable, and well-tested code
 Repo directory structure
 Testing your directory structure and output format
 
-#Challenge Summary
+# Challenge Summary
 
 Picture yourself as a backend engineer for a NASA fan website that generates a large amount of Internet traffic data. Your challenge is to perform basic analytics on the server log file, provide useful metrics, and implement basic security measures. 
 
 The desired features are described below: 
 
-###Feature 1: 
+### Feature 1: 
 List the top 10 most active hosts (or IP addresses) that have accessed the site.
 
-###Feature 2: 
+### Feature 2: 
 Identify the 10 resources that consume the most bandwidth on the site
 
-###Feature 3:
+### Feature 3:
 List the top 10 busiest (or most frequently visited) 60-minute periods 
 
-###Feature 4: 
+### Feature 4: 
 Detect patterns of three failed login attempts from the same user over 20 seconds so that all further attempts to the site can be blocked for 5 minutes. Log those possible security breaches.
 
 
-###Other considerations and optional features
+### Other considerations and optional features
 It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same user couldn’t be blocked immediately, and that would present a security breach.
 This dataset is inspired by real NASA web traffic, which is very similar to server logs from e-commerce and other sites. Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
 
-##Details of Implementation
+## Details of Implementation
 With this coding challenge, you should demonstrate a strong understanding of computer science fundamentals. We won't be wowed by your knowledge of various available software libraries, but will be impressed by your ability to pick and use the best data structures and algorithms for the job.
 
 We're looking for clean, well-thought-out code that correctly implements the desired features in an optimized way and highlights your ability to write production-quality code.
 
 We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the three required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
-###Feature 1 
+### Feature 1 
 List in descending order the top 10 most active hosts (i.e. IP addresses) that have accessed the site.
 
 Write to a file, named `hosts.txt`, the 10 most active hosts (or IP addresses) in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the host followed by a comma and then the number of times the host accessed the site. 
@@ -49,7 +49,7 @@ e.g., `hosts.txt`:
     …
 
 
-###Feature 2 
+### Feature 2 
 Identify the top 10 resources on the site that consume the most bandwidth. Bandwidth consumption can be extrapolated from bytes sent over the network and the frequency by which they were accessed.
 
 These most bandwidth-intensive resources, sorted in descending order and separated by a new line, should be written to a file called `resources.txt`
@@ -63,7 +63,7 @@ e.g., `resources.txt`:
     …
 
 
-###Feature 3 
+### Feature 3 
 List in descending order the site’s 10 busiest (i.e. most frequently visited) 60-minute period.
 
 Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed. The file should contain 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
@@ -76,7 +76,7 @@ e.g., `hours.txt`:
     01/Jul/1995:12:30:05 -0400	8
     …
 
-###Feature 4 
+### Feature 4 
 Your final task is to detect patterns of three consecutive failed login attempts over 20 seconds in order to block all further attempts to reach the site from the same host/IP address for the next 5 minutes. Each attempt that would have been blocked should be written to a log file named `blocked.txt`.
 
 The site’s fictional owners don’t expect you to write the actual web server code to block the attempt, but rather want to gauge how much of a problem these potential security breaches represent. 
@@ -95,7 +95,7 @@ e.g., `blocked.txt`
     uplherc.upl.com - - [01/Aug/1995:00:00:08 -0400] "GET /images/ksclogo-medium.gif HTTP/1.0" 304 0
     …
 
-##Description of Data
+## Description of Data
 
 You can expect the log file to be in ASCII with one line per request, containing the following columns:
 
@@ -121,7 +121,7 @@ e.g., `log.txt`
     
 In the above example, the third line shows a failed login (HTTP reply code of 401) followed by a successful login (HTTP reply code of 200) two seconds later from the same IP address.
 
-##Writing clean, scalable, and well-tested code
+## Writing clean, scalable, and well-tested code
 
 As a data engineer, it’s important that you write clean, well-documented code that scales for large amounts of data. For this reason, it’s important to ensure that your solution works well for a huge number of logged events, rather than just the simple examples above.
 
@@ -135,7 +135,7 @@ In addition to the source code, the top-most directory of your repo must include
 
 If your solution requires additional libraries, environments, or dependencies, you must specify these in your `README` documentation. See the figure below for the required structure of the top-most directory in your repo, or simply clone this repo.
 
-##Repo directory structure
+## Repo directory structure
 
 
 Alternatively, here is example output of the tree command:
@@ -173,7 +173,7 @@ Alternatively, here is example output of the tree command:
 
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
 
-##Testing your directory structure and output format
+## Testing your directory structure and output format
 
 To make sure that your code has the correct directory structure and the format of the output files are correct, we included a test script, called `run_tests.sh` in the `insight_testsuite` folder.
 
@@ -199,54 +199,54 @@ One test has been provided as a way to check your formatting and simulate how we
 
 Your submission must pass at least the provided test in order to pass the coding challenge.
 
-#FAQ
+# FAQ
 
 Here are some common questions we've received. If you have additional questions, please email us at `cc@insightdataengineering.com` and we'll answer your questions as quickly as we can, and update this FAQ.
 
-###Which Github link should I submit?
+### Which Github link should I submit?
 You should submit the URL for the top-level root of your repository. For example, this repo would be submitted by copying the URL `https://github.com/InsightDataScience/fansite-analytics-challenge` into the appropriate field on the application. Do NOT try to submit your coding challenge using a pull request, which would make your source code publicly available.
 
-###Do I need a private Github repo?
+### Do I need a private Github repo?
 No, you may use a public repo, there is no need to purchase a private repo. You may also submit a link to a Bitbucket repo if you prefer.
 
-###May I use R, Matlab, or other analytics programming languages to solve the challenge?
+### May I use R, Matlab, or other analytics programming languages to solve the challenge?
 It's important that your implementation scales to handle large amounts of data. While many of our Fellows have experience with R and Matlab, applicants have found that these languages are unable to process data in a scalable fashion, so you should consider another language.
 
-###May I use distributed technologies like Hadoop or Spark?
+### May I use distributed technologies like Hadoop or Spark?
 While you're welcome to do so, your code will be tested on a single machine so there may not be a significant benefit to using these technologies prior to the program. With that said, learning about distributed systems is a valuable skill for all data engineers.
 
-###What sort of system should I use to run my program on (Windows, Linux, Mac)?
+### What sort of system should I use to run my program on (Windows, Linux, Mac)?
 You may write your solution on any system, but your source code should be portable and work on all systems. Additionally, your run.sh must be able to run on either Unix or Linux, as that's the system that will be used for testing. Linux machines are the industry standard for most data engineering teams, so it is helpful to be familiar with this. If you're currently using Windows, we recommend using tools like Cygwin or Docker, or a free online IDE such as Cloud9.
 
-###How fast should my program run?
+### How fast should my program run?
 While there are no strict performance guidelines to this coding challenge, we will take the amount of time your program takes into consideration in grading the challenge. Therefore, you should design and develop your program in the most optimal way. 
 
-###Can I use pre-built packages, modules, or libraries?
+### Can I use pre-built packages, modules, or libraries?
 This coding challenge can be completed without any "exotic" packages. While you may use publicly available packages, modules, or libraries, you must document any dependencies in your accompanying README file. When we review your submission, we will download these libraries and attempt to run your program. If you do use a package, you should always ensure that the module you're using works efficiently for the specific use-case in the challenge, since many libraries are not designed for large amounts of data.
 
-###Can I use a database engine?
+### Can I use a database engine?
 This coding challenge can be completed without the use of a database. However, if you must use one, it must be a publicly available one that can be easily installed with minimal configuration.
 
-###Will you email me if my code doesn't run?
+### Will you email me if my code doesn't run?
 Unfortunately, we receive hundreds of submissions in a very short time and are unable to email individuals if code doesn't compile or run. This is why it's so important to document any dependencies you have, as described in the previous question. We will do everything we can to properly test your code, but this requires good documentation. More so, we have provided a test suite so you can confirm that your directory structure and format are correct.
 
-###Do I need to use multi-threading?
+### Do I need to use multi-threading?
 No, your solution doesn't necessarily need to include multi-threading - there are many solutions that don't require multiple threads/cores or any distributed systems, but instead use efficient data structures.
 
-###What should the format of the output be?
+### What should the format of the output be?
 In order to be tested correctly, you must use the format described above. You can ensure that you have the correct format by using the testing suite we've included. If you are still unable to get the correct format from the debugging messages in the suite, please email us at `cc@insightdataengineering.com`.
 
-###Should I check if the files in the input directory are text files or non-text files(binary)?
+### Should I check if the files in the input directory are text files or non-text files(binary)?
 No, for simplicity you may assume that all of the files in the input directory are text files, with the format as described above.
 
-###Can I use an IDE like Eclipse or IntelliJ to write my program?
+### Can I use an IDE like Eclipse or IntelliJ to write my program?
 Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `hosts.txt`, `hours.txt`, `resources.txt`, `blocked.txt` files in the `log_output` directory.
 
-###What should be in the log_input directory?
+### What should be in the log_input directory?
 You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing.
 
-###How will the coding challenge be evaluated?
+### How will the coding challenge be evaluated?
 Generally, we will evaluate your coding challenge with a testing suite that provides a variety of inputs and checks the corresponding output. This suite will attempt to use your `run.sh` and is fairly tolerant to different runtime environments. Of course, there are many aspects (e.g. clean code, documentation) that cannot be tested by our suite, so each submission will also be reviewed manually by a data engineer.
 
-###How long will it take for me to hear back from you about my submission?
+### How long will it take for me to hear back from you about my submission?
 We receive hundreds of submissions and try to evaluate them all in a timely manner. We try to get back to all applicants within two or three weeks of submission, but if you have a specific deadline that requires expedited review, you may email us at `cc@insightdataengineering.com`.
