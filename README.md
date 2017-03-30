@@ -1,17 +1,11 @@
 # Table of Contents
-[Challenge Summary](README.md#challenge-summary)
-
-[Details of Implementation](README.md#details-of-implementation)
-
-[Description of Data](README.md#description-of-data)
-
-[Writing clean, scalable, and well-tested code](README.md#-writing-clean-scalable-and-well-tested-code)
-
-[Repo directory structure](README.md#repo-directory-structure)
-
-[Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
-
-[FAQ](README.md#faq)
+1. [Challenge Summary](README.md#challenge-summary)
+2. [Details of Implementation](README.md#details-of-implementation)
+3. [Description of Data](README.md#description-of-data)
+4. [Writing clean, scalable, and well-tested code](README.md#writing-clean-scalable-and-well-tested-code)
+5. [Repo directory structure](README.md#repo-directory-structure)
+6. [Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
+7. [FAQ](README.md#faq)
 
 
 # Challenge Summary
@@ -74,14 +68,14 @@ e.g., `resources.txt`:
 ### Feature 3 
 List in descending order the site’s 10 busiest (i.e. most frequently visited) 60-minute period.
 
-Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed. The file should contain 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
+Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed during that time period. The file should contain 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
 
 e.g., `hours.txt`:
 
-    01/Jul/1995:00:00:01 -0400, 100
-    02/Jul/1995:13:00:00 -0400	22
-    05/Jul/1995:09:05:02 -0400	10
-    01/Jul/1995:12:30:05 -0400	8
+    01/Jul/1995:00:00:01 -0400,100
+    02/Jul/1995:13:00:00 -0400,22
+    05/Jul/1995:09:05:02 -0400,10
+    01/Jul/1995:12:30:05 -0400,8
     …
 
 ### Feature 4 
@@ -105,7 +99,7 @@ e.g., `blocked.txt`
 
 ## Description of Data
 
-You can expect the log file to be in ASCII with one line per request, containing the following columns:
+You can expect an input log file in ASCII format with one line per request, containing the following columns:
 
 * **host** making the request. A hostname when possible, otherwise the Internet address if the name could not be looked up.
 
