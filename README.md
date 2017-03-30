@@ -13,7 +13,7 @@ Picture yourself as a backend engineer for a NASA fan website that generates a l
 The desired features are described below: 
 
 ### Feature 1: 
-List the top 10 most active hosts (or IP addresses) that have accessed the site.
+List the top 10 most active IP addresses that have accessed the site.
 
 ### Feature 2: 
 Identify the 10 resources that consume the most bandwidth on the site
@@ -37,9 +37,9 @@ We're looking for clean, well-thought-out code that correctly implements the des
 We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the three required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
 ### Feature 1 
-List in descending order the top 10 most active hosts (i.e. IP addresses) that have accessed the site.
+List in descending order the top 10 most active IP addresses that have accessed the site.
 
-Write to a file, named `hosts.txt`, the 10 most active hosts (or IP addresses) in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the host followed by a comma and then the number of times the host accessed the site. 
+Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the IP address followed by a comma and then the number of times it accessed the site. 
 
 e.g., `hosts.txt`:
 
@@ -77,7 +77,7 @@ e.g., `hours.txt`:
     …
 
 ### Feature 4 
-Your final task is to detect patterns of three consecutive failed login attempts over 20 seconds in order to block all further attempts to reach the site from the same host/IP address for the next 5 minutes. Each attempt that would have been blocked should be written to a log file named `blocked.txt`.
+Your final task is to detect patterns of three consecutive failed login attempts over 20 seconds in order to block all further attempts to reach the site from the same IP address for the next 5 minutes. Each attempt that would have been blocked should be written to a log file named `blocked.txt`.
 
 The site’s fictional owners don’t expect you to write the actual web server code to block the attempt, but rather want to gauge how much of a problem these potential security breaches represent. 
 
