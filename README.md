@@ -97,7 +97,7 @@ e.g., `blocked.txt`
     uplherc.upl.com - - [01/Aug/1995:00:00:08 -0400] "GET /images/ksclogo-medium.gif HTTP/1.0" 304 0
     …
 
-The following illustration may help you understand how we would want this feature to work, and when three failed login attempts would trigger the 5 minutes of blocking:
+The following illustration may help you understand how this feature might work, and when three failed login attempts would trigger 5 minutes of blocking:
 
 
 ![Feature 4 illustration](images/feature4.png)
