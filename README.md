@@ -36,7 +36,7 @@ With this coding challenge, you should demonstrate a strong understanding of com
 
 We're looking for clean, well-thought-out code that correctly implements the desired features in an optimized way and highlights your ability to write production-quality code.
 
-We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the three required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
+We also want to see how you use your programming skills to solve business problems. At a minimum, you should implement the four required features, but feel free to expand upon this challenge or add other features you think would prevent fraud and further business goals. Be sure to document these add-ons so we know to look for them.
 
 ### Feature 1 
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
@@ -101,7 +101,7 @@ Note that this feature should not impact the other features in this challenge. F
 
 ## Description of Data
 
-You can expect an input log file in ASCII format with one line per request, containing the following columns:
+Assume you receive as input, a file, `log.txt`, in ASCII format with one line per request, containing the following columns:
 
 * **host** making the request. A hostname when possible, otherwise the Internet address if the name could not be looked up.
 
@@ -141,8 +141,7 @@ If your solution requires additional libraries, environments, or dependencies, y
 
 ## Repo directory structure
 
-
-Alternatively, here is example output of the tree command:
+The directory structure for your repo should look like this:
 
     ├── README.md 
     ├── run.sh
@@ -151,10 +150,10 @@ Alternatively, here is example output of the tree command:
     ├── log_input
     │   └── log.txt
     ├── log_output
-        └── hosts.txt
-        └── hours.txt
-        └── resources.txt
-        └── blocked.txt
+    |   └── hosts.txt
+    |   └── hours.txt
+    |   └── resources.txt
+    |   └── blocked.txt
     ├── insight_testsuite
         └── run_tests.sh
         └── tests
@@ -181,7 +180,7 @@ The contents of `src` do not have to contain a single file called `process_log.p
 
 To make sure that your code has the correct directory structure and the format of the output files are correct, we included a test script, called `run_tests.sh` in the `insight_testsuite` folder.
 
-The tests are stored simply as text files under the insight_testsuite/tests folder. Each test should have a separate folder and within should have a log_input folder for log.txt and a log_output folder for outputs corresponding to the current test.
+The tests are stored simply as text files under the `insight_testsuite/tests` folder. Each test should have a separate folder and within should have a `log_input` folder for `log.txt` and a `log_output` folder for outputs corresponding to the current test.
 
 You can run the test with the following from the `insight_testsuite` folder:
 
