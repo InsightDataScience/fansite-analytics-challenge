@@ -168,7 +168,7 @@ The directory structure for your repo should look like this:
     ├── insight_testsuite
         └── run_tests.sh
         └── tests
-            └── test-one-event
+            └── test_features
             |   ├── log_input
             |   │   └── log.txt
             |   |__ log_output
@@ -196,17 +196,23 @@ The tests are stored simply as text files under the `insight_testsuite/tests` fo
 
 You can run the test with the following from the `insight_testsuite` folder:
 
-    insight_testsuite$ ./run_tests.sh 
+    insight_testsuite~$ ./run_tests.sh 
 
 On a failed test, the output of `run_tests.sh` should look like:
 
-    [FAIL]: test-one-event
-    [Tue Mar 29 2017 11:59:59] 0 of 1 tests passed
+    [FAIL]: test_features (hosts.txt)
+    [FAIL]: test_features (resources.txt)
+    [PASS]: test_features (hours.txt)
+    [FAIL]: test_features (blocked.txt)
+    [Thu Mar 30 16:28:01 PDT 2017] 1 of 4 tests passed
 
 On success:
 
-    [PASS]: test-one-event
-    [Tue Mar 29 2017 11:59:59] 1 of 1 tests passed
+    [PASS]: test_features (hosts.txt)
+    [PASS]: test_features (resources.txt)
+    [PASS]: test_features (hours.txt)
+    [PASS]: test_features (blocked.txt)
+    [Thu Mar 30 16:25:57 PDT 2017] 4 of 4 tests passed
 
 
 
