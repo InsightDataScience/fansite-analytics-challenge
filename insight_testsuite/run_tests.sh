@@ -31,12 +31,12 @@ function find_file_or_dir_in_project {
 function check_project_struct {
   find_file_or_dir_in_project ${PROJECT_PATH} run.sh
   find_file_or_dir_in_project ${PROJECT_PATH} src
-  find_file_or_dir_in_project ${PROJECT_PATH} input
-  find_file_or_dir_in_project ${PROJECT_PATH} output
+  find_file_or_dir_in_project ${PROJECT_PATH} log_input
+  find_file_or_dir_in_project ${PROJECT_PATH} log_output
 }
 
-# setup testing output folder
-function setup_testing_input_output {
+# setup testing log_output folder
+function setup_testing_log_input_log_output {
   TEST_OUTPUT_PATH=${GRADER_ROOT}/temp
   if [ -d ${TEST_OUTPUT_PATH} ]; then
     rm -rf ${TEST_OUTPUT_PATH}
@@ -46,17 +46,17 @@ function setup_testing_input_output {
 
   cp -r ${PROJECT_PATH}/src ${TEST_OUTPUT_PATH}
   cp -r ${PROJECT_PATH}/run.sh ${TEST_OUTPUT_PATH}
-  cp -r ${PROJECT_PATH}/input ${TEST_OUTPUT_PATH}
-  cp -r ${PROJECT_PATH}/output ${TEST_OUTPUT_PATH}
+  cp -r ${PROJECT_PATH}/log_input ${TEST_OUTPUT_PATH}
+  cp -r ${PROJECT_PATH}/log_output ${TEST_OUTPUT_PATH}
 
-  rm -r ${TEST_OUTPUT_PATH}/input/*
-  rm -r ${TEST_OUTPUT_PATH}/output/*
-  cp -r ${GRADER_ROOT}/tests/${test_folder}/input/logs.txt ${TEST_OUTPUT_PATH}/input/logs.txt
+  rm -r ${TEST_OUTPUT_PATH}/log_input/*
+  rm -r ${TEST_OUTPUT_PATH}/log_output/*
+  cp -r ${GRADER_ROOT}/tests/${test_folder}/log_input/log.txt ${TEST_OUTPUT_PATH}/log_input/log.txt
 }
 
-function compare_outputs {
-  PROJECT_ANSWER_PATH=${GRADER_ROOT}/temp/output/output.txt
-  TEST_ANSWER_PATH=${GRADER_ROOT}/tests/${test_folder}/output/output.txt
+function compare_log_outputs {
+  PROJECT_ANSWER_PATH=${GRADER_ROOT}/temp/log_output/log_output.txt
+  TEST_ANSWER_PATH=${GRADER_ROOT}/tests/${test_folder}/log_output/log_output.txt
 
   DIFF_RESULT=$(diff -bB ${PROJECT_ANSWER_PATH} ${TEST_ANSWER_PATH} | wc -l)
   if [ "${DIFF_RESULT}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH} ]; then
@@ -76,13 +76,13 @@ function run_all_tests {
   # Loop through all tests
   for test_folder in ${TEST_FOLDERS}; do
 
-    setup_testing_input_output
+    setup_testing_log_input_log_output
 
     cd ${GRADER_ROOT}/temp
     bash run.sh 2>&1
     cd ../
 
-    compare_outputs
+    compare_log_outputs
   done
 
   echo "[$(date)] ${PASS_CNT} of ${NUM_TESTS} tests passed" >> ${GRADER_ROOT}/results.txt
