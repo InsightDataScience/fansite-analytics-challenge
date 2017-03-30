@@ -35,8 +35,8 @@ function check_project_struct {
   find_file_or_dir_in_project ${PROJECT_PATH} log_output
 }
 
-# setup testing log_output folder
-function setup_testing_log_input_log_output {
+# setup testing output folder
+function setup_testing_input_output {
   TEST_OUTPUT_PATH=${GRADER_ROOT}/temp
   if [ -d ${TEST_OUTPUT_PATH} ]; then
     rm -rf ${TEST_OUTPUT_PATH}
@@ -54,35 +54,68 @@ function setup_testing_log_input_log_output {
   cp -r ${GRADER_ROOT}/tests/${test_folder}/log_input/log.txt ${TEST_OUTPUT_PATH}/log_input/log.txt
 }
 
-function compare_log_outputs {
-  PROJECT_ANSWER_PATH=${GRADER_ROOT}/temp/log_output/log_output.txt
-  TEST_ANSWER_PATH=${GRADER_ROOT}/tests/${test_folder}/log_output/log_output.txt
+function compare_outputs {
+  PROJECT_ANSWER_PATH1=${GRADER_ROOT}/temp/log_output/hosts.txt
+  PROJECT_ANSWER_PATH2=${GRADER_ROOT}/temp/log_output/resources.txt
+  PROJECT_ANSWER_PATH3=${GRADER_ROOT}/temp/log_output/hours.txt
+  PROJECT_ANSWER_PATH4=${GRADER_ROOT}/temp/log_output/blocked.txt
+  TEST_ANSWER_PATH1=${GRADER_ROOT}/tests/${test_folder}/log_output/hosts.txt
+  TEST_ANSWER_PATH2=${GRADER_ROOT}/tests/${test_folder}/log_output/resources.txt
+  TEST_ANSWER_PATH3=${GRADER_ROOT}/tests/${test_folder}/log_output/hours.txt
+  TEST_ANSWER_PATH4=${GRADER_ROOT}/tests/${test_folder}/log_output/blocked.txt
 
-  DIFF_RESULT=$(diff -bB ${PROJECT_ANSWER_PATH} ${TEST_ANSWER_PATH} | wc -l)
-  if [ "${DIFF_RESULT}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH} ]; then
-    echo -e "[${color_green}PASS${color_norm}]: ${test_folder}"
+  DIFF_RESULT1=$(diff -bB ${PROJECT_ANSWER_PATH1} ${TEST_ANSWER_PATH1} | wc -l)
+  if [ "${DIFF_RESULT1}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH1} ]; then
+    echo -e "[${color_green}PASS${color_norm}]: ${test_folder} (hosts.txt)"
     PASS_CNT=$(($PASS_CNT+1))
   else
-    echo -e "[${color_red}FAIL${color_norm}]: ${test_folder}"
-    diff ${PROJECT_ANSWER_PATH} ${TEST_ANSWER_PATH}
+    echo -e "[${color_red}FAIL${color_norm}]: ${test_folder} (hosts.txt)"
+    diff ${PROJECT_ANSWER_PATH1} ${TEST_ANSWER_PATH1}
+  fi
+
+  DIFF_RESULT2=$(diff -bB ${PROJECT_ANSWER_PATH2} ${TEST_ANSWER_PATH2} | wc -l)
+  if [ "${DIFF_RESULT2}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH2} ]; then
+    echo -e "[${color_green}PASS${color_norm}]: ${test_folder} (resources.txt)"
+    PASS_CNT=$(($PASS_CNT+1))
+  else
+    echo -e "[${color_red}FAIL${color_norm}]: ${test_folder} (resources.txt)"
+    diff ${PROJECT_ANSWER_PATH2} ${TEST_ANSWER_PATH2}
+  fi
+
+  DIFF_RESULT3=$(diff -bB ${PROJECT_ANSWER_PATH3} ${TEST_ANSWER_PATH3} | wc -l)
+  if [ "${DIFF_RESULT3}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH3} ]; then
+    echo -e "[${color_green}PASS${color_norm}]: ${test_folder} (hours.txt)"
+    PASS_CNT=$(($PASS_CNT+1))
+  else
+    echo -e "[${color_red}FAIL${color_norm}]: ${test_folder} (hours.txt)"
+    diff ${PROJECT_ANSWER_PATH3} ${TEST_ANSWER_PATH3}
+  fi
+  
+  DIFF_RESULT4=$(diff -bB ${PROJECT_ANSWER_PATH4} ${TEST_ANSWER_PATH4} | wc -l)
+  if [ "${DIFF_RESULT4}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH4} ]; then
+    echo -e "[${color_green}PASS${color_norm}]: ${test_folder} (blocked.txt)"
+    PASS_CNT=$(($PASS_CNT+1))
+  else
+    echo -e "[${color_red}FAIL${color_norm}]: ${test_folder} (blocked.txt)"
+    diff ${PROJECT_ANSWER_PATH4} ${TEST_ANSWER_PATH4}
   fi
 }
 
 function run_all_tests {
   TEST_FOLDERS=$(ls ${GRADER_ROOT}/tests)
-  NUM_TESTS=$(echo $(echo ${TEST_FOLDERS} | wc -w))
+  NUM_TESTS=$(($(echo $(echo ${TEST_FOLDERS} | wc -w)) * 4))
   PASS_CNT=0
 
   # Loop through all tests
   for test_folder in ${TEST_FOLDERS}; do
 
-    setup_testing_log_input_log_output
+    setup_testing_input_output
 
     cd ${GRADER_ROOT}/temp
     bash run.sh 2>&1
     cd ../
 
-    compare_log_outputs
+    compare_outputs
   done
 
   echo "[$(date)] ${PASS_CNT} of ${NUM_TESTS} tests passed" >> ${GRADER_ROOT}/results.txt
@@ -90,4 +123,3 @@ function run_all_tests {
 
 check_project_struct
 run_all_tests
-
