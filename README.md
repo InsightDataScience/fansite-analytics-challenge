@@ -105,6 +105,11 @@ The following illustration may help you understand how this feature might work, 
 
 Note that this feature should not impact the other features in this challenge. For instance, any requests that end up in the `blocked.txt` file should be counted toward the most active IP host calculation, bandwidth consumption and busiest 60-minute period.
 
+### Additional Features
+
+Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above four (e.g. don't alter the output of the four core features).
+
+
 ## Description of Data
 
 Assume you receive as input, a file, `log.txt`, in ASCII format with one line per request, containing the following columns:
@@ -180,6 +185,7 @@ The directory structure for your repo should look like this:
                     └── resources.txt
                     └── blocked.txt
 
+You simply clone this repo, but <b>please don't fork</b> it.
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
 
 ## Testing your directory structure and output format
