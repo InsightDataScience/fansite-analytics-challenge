@@ -1,10 +1,11 @@
 # Table of Contents
-Challenge Summary
-Details of Implementation
-Description of Data
-Writing clean, scalable, and well-tested code
-Repo directory structure
-Testing your directory structure and output format
+[Challenge Summary](README.md#challenge-summary)
+[Details of Implementation](README.md#details-of-implementation)
+[Description of Data](README.md#description-of-data)
+[Writing clean, scalable, and well-tested code](README.md#-writing-clean-scalable-and-well-tested-code)
+[Repo directory structure](README.md#repo-directory-structure)
+[Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
+[FAQ](README.md#faq)
 
 # Challenge Summary
 
