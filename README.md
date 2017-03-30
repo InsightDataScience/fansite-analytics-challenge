@@ -26,7 +26,7 @@ Detect patterns of three failed login attempts from the same IP address over 20 
 
 
 ### Other considerations and optional features
-It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same user couldn’t be blocked immediately, and that would present a security breach.
+It's critical that these features don't take too long to run. For example, if it took too long to detect three failed login attempts, further traffic from the same IP address couldn’t be blocked immediately, and that would present a security breach.
 This dataset is inspired by real NASA web traffic, which is very similar to server logs from e-commerce and other sites. Monitoring web traffic and providing these analytics is a real business need, but it’s not the only thing you can do with the data. Feel free to implement additional features that you think might be useful.
 
 ## Details of Implementation
