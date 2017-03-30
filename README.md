@@ -85,11 +85,11 @@ The site’s fictional owners don’t expect you to write the actual web server 
 
 Detect three failed login attempts from the same IP address over a consecutive 20 seconds, and then write to the `blocked.txt` file any subsequent attempts to reach the site from the same IP address over the next 5 minutes. 
 
-During the 5 minutes of blockage, if there is a fourth or more failed login attempt, that should extend the blocked time by an additional 5 minutes. In other words, after three consecutive failed logins within a 20 second window, access to the website would be blocked and only resume 5 minutes from the last failed login attempt. (e.g., If the third consecutive failed login attempt within a 20 second window occurred on 01/Aug/1995:00:00:08, all access to the website for that IP address would be blocked for the next 5 minutes. However, if the same IP host unsuccessfully tried to login once more at 01/Aug/1995:00:01:08, access to the site would only be allowed to resume at 01/Aug/1995:00:06:09) 
+In other words, after three consecutive failed logins within a 20 second window, access to the website should be blocked and only resume after 5 minutes. For example, if the third consecutive failed login attempt within a 20 second window occurred on `01/Aug/1995:00:00:08`, all access to the website for that IP address would be blocked for the next 5 minutes. Even if the same IP host attempted a login -- successful or or not -- one minute later at `01/Aug/1995:00:01:08`, that attempt should be ignored and logged to the `blocked.txt` file. Access to the site from that IP address would be allowed to resume at `01/Aug/1995:00:05:09`.
 
 If an IP address has not reached three failed login attempts during the 20 second window, a login attempt that succeeds during that time period should reset the failed login counter and 20-second clock. 
 
-As an example, if after two failed login attempts, a third login attempt is successful, full access should be allowed to resume immediately afterward. The next failed login attempt would be counted as 1, and the 20-second timer would begin there. In other words, this feature should only be triggered if an IP has  3 failed logins in a row, within a 20-second window.
+For example, if after two failed login attempts, a third login attempt is successful, full access should be allowed to resume immediately afterward. The next failed login attempt would be counted as 1, and the 20-second timer would begin there. In other words, this feature should only be triggered if an IP has  3 failed logins in a row, within a 20-second window.
 
 e.g., `blocked.txt`
 
