@@ -41,7 +41,7 @@ We also want to see how you use your programming skills to solve business proble
 ### Feature 1 
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
 
-Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the host (or IP address) followed by a comma and then the number of times it accessed the site. 
+Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be at most 10 lines in the file, and each line should include the host (or IP address) followed by a comma and then the number of times it accessed the site. 
 
 e.g., `hosts.txt`:
 
@@ -68,7 +68,7 @@ e.g., `resources.txt`:
 ### Feature 3 
 List in descending order the site’s 10 busiest (i.e. most frequently visited) 60-minute period.
 
-Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed during that time period. The file should contain 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
+Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed during that time period. The file should contain at most 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
 
 e.g., `hours.txt`:
 
@@ -97,7 +97,18 @@ e.g., `blocked.txt`
     uplherc.upl.com - - [01/Aug/1995:00:00:08 -0400] "GET /images/ksclogo-medium.gif HTTP/1.0" 304 0
     …
 
+The following illustration may help you understand how this feature might work, and when three failed login attempts would trigger 5 minutes of blocking:
+
+
+![Feature 4 illustration](images/feature4.png)
+
+
 Note that this feature should not impact the other features in this challenge. For instance, any requests that end up in the `blocked.txt` file should be counted toward the most active IP host calculation, bandwidth consumption and busiest 60-minute period.
+
+### Additional Features
+
+Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above four (e.g. don't alter the output of the four core features).
+
 
 ## Description of Data
 
@@ -131,7 +142,7 @@ As a data engineer, it’s important that you write clean, well-documented code 
 
 For example, your solution should be able to account for a large number of events coming in over a short period of time, and need to keep up with the input (i.e. need to process a minute worth of events in less than a minute).
 
-It's also important to use software engineering best practices like unit tests, especially since public data is not clean and predictable. For more details about the implementation, please refer to the FAQ below. If further clarification is necessary, email us at mailto:cc@insightdataengineering.com
+It's also important to use software engineering best practices like unit tests, especially since public data is not clean and predictable. For more details about the implementation, please refer to the FAQ below. If further clarification is necessary, email us at <cc@insightdataengineering.com>
 
 You may write your solution in any mainstream programming language such as C, C++, C#, Clojure, Erlang, Go, Haskell, Java, Python, Ruby, or Scala. Once completed, submit a link to a Github repo with your source code.
 
@@ -174,6 +185,7 @@ The directory structure for your repo should look like this:
                     └── resources.txt
                     └── blocked.txt
 
+You simply clone this repo, but <b>please don't fork</b> it.
 The contents of `src` do not have to contain a single file called `process_log.py`, you are free to include one or more files and name them as you wish.
 
 ## Testing your directory structure and output format
@@ -246,7 +258,7 @@ No, for simplicity you may assume that all of the files in the input directory a
 Yes, you can use what ever tools you want - as long as your run.sh script correctly runs the relevant target files and creates the `hosts.txt`, `hours.txt`, `resources.txt`, `blocked.txt` files in the `log_output` directory.
 
 ### What should be in the log_input directory?
-You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing.
+You can put any text file you want in the directory since our testing suite will replace it. Indeed, using your own input files would be quite useful for testing. The file size limit on Github is 100 MB so you won't be able to include the provided input file in your log_input directory.
 
 ### How will the coding challenge be evaluated?
 Generally, we will evaluate your coding challenge with a testing suite that provides a variety of inputs and checks the corresponding output. This suite will attempt to use your `run.sh` and is fairly tolerant to different runtime environments. Of course, there are many aspects (e.g. clean code, documentation) that cannot be tested by our suite, so each submission will also be reviewed manually by a data engineer.
