@@ -90,7 +90,7 @@ function compare_outputs {
     echo -e "[${color_red}FAIL${color_norm}]: ${test_folder} (hours.txt)"
     diff ${PROJECT_ANSWER_PATH3} ${TEST_ANSWER_PATH3}
   fi
-}
+  
   DIFF_RESULT4=$(diff -bB ${PROJECT_ANSWER_PATH4} ${TEST_ANSWER_PATH4} | wc -l)
   if [ "${DIFF_RESULT4}" -eq "0" ] && [ -f ${PROJECT_ANSWER_PATH4} ]; then
     echo -e "[${color_green}PASS${color_norm}]: ${test_folder} (blocked.txt)"
