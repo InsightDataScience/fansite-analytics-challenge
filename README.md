@@ -41,7 +41,7 @@ We also want to see how you use your programming skills to solve business proble
 ### Feature 1 
 List in descending order the top 10 most active hosts/IP addresses that have accessed the site.
 
-Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be 10 lines in the file, and each line should include the host (or IP address) followed by a comma and then the number of times it accessed the site. 
+Write to a file, named `hosts.txt`, the 10 most active hosts/IP addresses in descending order and how many times they have accessed any part of the site. There should be at most 10 lines in the file, and each line should include the host (or IP address) followed by a comma and then the number of times it accessed the site. 
 
 e.g., `hosts.txt`:
 
@@ -68,7 +68,7 @@ e.g., `resources.txt`:
 ### Feature 3 
 List in descending order the site’s 10 busiest (i.e. most frequently visited) 60-minute period.
 
-Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed during that time period. The file should contain 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
+Write to a file named `hours.txt`, the start of each 60-minute window followed by the number of times the site was accessed during that time period. The file should contain at most 10 lines with each line containing the start of each 60-minute window, followed by a comma and then the number of times the site was accessed during those 60 minutes. The 10 lines should be listed in descending order with the busiest 60-minute window shown first. 
 
 e.g., `hours.txt`:
 
