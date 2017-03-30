@@ -81,8 +81,6 @@ e.g., `hours.txt`:
 ### Feature 4 
 Your final task is to detect patterns of three consecutive failed login attempts over 20 seconds in order to block all further attempts to reach the site from the same IP address for the next 5 minutes. Each attempt that would have been blocked should be written to a log file named `blocked.txt`.
 
-![Feature 4 illustration](images/feature4.png)
-
 The site’s fictional owners don’t expect you to write the actual web server code to block the attempt, but rather want to gauge how much of a problem these potential security breaches represent. 
 
 Detect three failed login attempts from the same IP address over a consecutive 20 seconds, and then write to the `blocked.txt` file any subsequent attempts to reach the site from the same IP address over the next 5 minutes. 
@@ -98,6 +96,12 @@ e.g., `blocked.txt`
     uplherc.upl.com - - [01/Aug/1995:00:00:07 -0400] "GET / HTTP/1.0" 304 0
     uplherc.upl.com - - [01/Aug/1995:00:00:08 -0400] "GET /images/ksclogo-medium.gif HTTP/1.0" 304 0
     …
+
+The following illustration may help you understand how we would want this feature to work, and when three failed login attempts would trigger the 5 minutes of blocking:
+
+
+![Feature 4 illustration](images/feature4.png)
+
 
 Note that this feature should not impact the other features in this challenge. For instance, any requests that end up in the `blocked.txt` file should be counted toward the most active IP host calculation, bandwidth consumption and busiest 60-minute period.
 
