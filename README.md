@@ -6,7 +6,8 @@
 5. [Writing clean, scalable, and well-tested code](README.md#writing-clean-scalable-and-well-tested-code)
 6. [Repo directory structure](README.md#repo-directory-structure)
 7. [Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
-8. [FAQ](README.md#faq)
+8. [Instructions to submit your solution](README.md#instructions-to-submit-your-solution)
+9. [FAQ](README.md#faq)
 
 
 # Challenge Summary
@@ -222,6 +223,15 @@ On success:
 One test has been provided as a way to check your formatting and simulate how we will be running tests when you submit your solution. We urge you to write your own additional tests here as well as for your own programming language. `run_tests.sh` should alert you if the directory structure is incorrect.
 
 Your submission must pass at least the provided test in order to pass the coding challenge.
+
+## Instructions to submit your solution
+* To submit your entry please use the link you receieved in your coding challenge invite email
+* You will only be able to submit through the link one time 
+* Do NOT attach a file - we will not admit solutions which are attached files 
+* Use the submission box to enter the link to your github repo or bitbucket ONLY
+* Link to the specific repo for this project, not your general repo
+* Put any comments in the RADME File inside your Project repo, not in the submission box
+* We are unable to accept coding challenges that are emailed to us 
 
 # FAQ
 
