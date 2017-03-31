@@ -1,11 +1,12 @@
 # Table of Contents
 1. [Challenge Summary](README.md#challenge-summary)
 2. [Details of Implementation](README.md#details-of-implementation)
-3. [Description of Data](README.md#description-of-data)
-4. [Writing clean, scalable, and well-tested code](README.md#writing-clean-scalable-and-well-tested-code)
-5. [Repo directory structure](README.md#repo-directory-structure)
-6. [Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
-7. [FAQ](README.md#faq)
+3. [Download Data](README.md#download-data)
+4. [Description of Data](README.md#description-of-data)
+5. [Writing clean, scalable, and well-tested code](README.md#writing-clean-scalable-and-well-tested-code)
+6. [Repo directory structure](README.md#repo-directory-structure)
+7. [Testing your directory structure and output format](README.md#testing-your-directory-structure-and-output-format)
+8. [FAQ](README.md#faq)
 
 
 # Challenge Summary
@@ -109,6 +110,8 @@ Note that this feature should not impact the other features in this challenge. F
 
 Feel free to implement additional features that might be useful to derive further metrics or prevent harmful activity. These features will be considered as bonus while evaluating your submission. If you choose to add extras please document them in your README and make sure that they don't interfere with the above four (e.g. don't alter the output of the four core features).
 
+## Download Data
+You can download the data here: https://drive.google.com/file/d/0B7-XWjN4ezogbUh6bUl1cV82Tnc/view?usp=sharing
 
 ## Description of Data
 
