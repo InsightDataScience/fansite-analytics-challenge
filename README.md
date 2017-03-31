@@ -270,6 +270,9 @@ No, your solution doesn't necessarily need to include multi-threading - there ar
 ### What should the format of the output be?
 In order to be tested correctly, you must use the format described above. You can ensure that you have the correct format by using the testing suite we've included. If you are still unable to get the correct format from the debugging messages in the suite, please email us at `cc@insightdataengineering.com`.
 
+### How should I handle ties in the data for feature 1-3? Should I list all the hosts/resources, or only 10? If only 10, how do I decide which 10?
+In the event of ties for features, please only list 10 entries, using lexicographical order to sort them.
+
 ### Should I check if the files in the input directory are text files or non-text files(binary)?
 No, for simplicity you may assume that all of the files in the input directory are text files, with the format as described above.
 
