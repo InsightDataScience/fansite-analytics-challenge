@@ -80,6 +80,8 @@ e.g., `hours.txt`:
     01/Jul/1995:12:30:05 -0400,8
     …
 
+A 60-minute window can be any 60 minute long time period, windows don't have to start at a time when an event occurs.
+
 ### Feature 4 
 Your final task is to detect patterns of three consecutive failed login attempts over 20 seconds in order to block all further attempts to reach the site from the same IP address for the next 5 minutes. Each attempt that would have been blocked should be written to a log file named `blocked.txt`.
 
